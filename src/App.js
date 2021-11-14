@@ -4,6 +4,7 @@ import ContactForm from "./Components/ContactForm";
 import ContactList from "./Components/ContactList";
 import Filter from "./Components/Filter";
 import shortid from "shortid";
+import Container from "./Components/Copntainer";
 
 class App extends React.Component {
   state = {
@@ -68,11 +69,16 @@ class App extends React.Component {
 
     return (
       <>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.changeContacts} />
-        <h2>Contacts</h2>
-        <Filter value={filter} handleChange={this.inputChange} />
-        <ContactList listName={getName} onDeleteContact={this.deleteContact} />
+        <Container>
+          <h1>Phonebook</h1>
+          <ContactForm onSubmit={this.changeContacts} />
+          <h2>Contacts</h2>
+          <Filter value={filter} handleChange={this.inputChange} />
+          <ContactList
+            listName={getName}
+            onDeleteContact={this.deleteContact}
+          />
+        </Container>
       </>
     );
   }
