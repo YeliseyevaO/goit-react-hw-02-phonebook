@@ -65,7 +65,6 @@ class App extends React.Component {
 
   render() {
     const { filter } = this.state;
-    const getName = this.getNecessaryName();
 
     return (
       <>
@@ -75,7 +74,7 @@ class App extends React.Component {
           <h2>Contacts</h2>
           <Filter value={filter} handleChange={this.inputChange} />
           <ContactList
-            listName={getName}
+            listName={this.getNecessaryName()}
             onDeleteContact={this.deleteContact}
           />
         </Container>
